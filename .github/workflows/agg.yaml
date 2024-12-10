@@ -3,13 +3,10 @@ name: CI Workflow
 on: push
 
 jobs:
-  job1:
+  npm-build:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: ls
+      - users: actions/checkout@v4
+      - run: npm install
+      - run: npm run build
 
-  job2:
-    runs-on: windows-latest
-    steps:
-      - run: node --version
